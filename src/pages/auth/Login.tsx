@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuthStore } from "../../store/authStore";
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 type LoginFormData = {
   email: string;
@@ -9,6 +10,7 @@ type LoginFormData = {
 
 export default function Login() {
   const login = useAuthStore((s) => s.login);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,6 +24,7 @@ export default function Login() {
       setIsLoading(true);
       setError(null);
       await login(data);
+      navigate("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {
@@ -30,10 +33,10 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="p-6 bg-white rounded shadow w-96"
+        className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg sm:p-8"
       >
         <h2 className="mb-4 text-xl font-semibold">Login</h2>
 
@@ -56,7 +59,7 @@ export default function Login() {
                 message: "Invalid email address",
               },
             })}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Email"
           />
           {errors.email && (
@@ -78,7 +81,7 @@ export default function Login() {
               },
             })}
             type="password"
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Password"
           />
           {errors.password && (
@@ -91,7 +94,7 @@ export default function Login() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full py-2 mt-2 text-white bg-blue-600 rounded disabled:bg-blue-400 disabled:cursor-not-allowed"
+          className="w-full py-3 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md disabled:bg-blue-400 disabled:cursor-not-allowed"
         >
           {isLoading ? "Logging in..." : "Login"}
         </button>

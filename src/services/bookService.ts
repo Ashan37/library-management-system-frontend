@@ -1,8 +1,15 @@
-import {api} from "./api";
+import { api } from "./api";
 
-export const BooksService={
-    getAll:()=>api.get("/books"),
-    create:(data:any)=>api.post("/books",data),
-    update:(id:string,data:any)=>api.put(`/books/${id}`,data),
-    delete:(id:string)=>api.delete(`/books/${id}`),
-}
+type BookData = {
+  title: string;
+  author: string;
+  description: string;
+  isbn?: string;
+};
+
+export const BooksService = {
+  getAll: () => api.get("/books"),
+  create: (data: BookData) => api.post("/books", data),
+  update: (id: string | number, data: BookData) => api.put(`/books/${id}`, data),
+  delete: (id: string | number) => api.delete(`/books/${id}`),
+};

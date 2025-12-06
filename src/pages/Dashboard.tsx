@@ -3,23 +3,23 @@ import { BookOpen, Plus, List} from "lucide-react";
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen p-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <h1 className="mb-2 text-4xl font-bold text-gray-800">
+        <div className="mt-10 mb-6 sm:mb-8">
+          <h1 className="mb-2 text-2xl font-bold text-gray-800 sm:text-3xl lg:text-4xl">
             Library Management System
           </h1>
-          <p className="text-gray-600">
+          <p className="text-sm text-gray-600 sm:text-base">
             Manage your book collection efficiently
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 mb-8 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Link
-            to="/books"
+            to="/dashboard/books"
             className="relative overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-2xl"
           >
-            <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-blue-500 to-blue-600 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 transition-opacity duration-300 bg-blue-600 opacity-0 group-hover:opacity-100"></div>
             <div className="relative flex flex-col items-center justify-center h-48 p-6">
               <div className="p-4 mb-4 transition-colors duration-300 bg-blue-100 rounded-full group-hover:bg-white/20">
                 <List className="w-8 h-8 text-blue-600 transition-colors duration-300 group-hover:text-white" />
@@ -34,10 +34,10 @@ export default function Dashboard() {
           </Link>
 
           <Link
-            to="/books/add"
+            to="/dashboard/books/add"
             className="relative overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-2xl"
           >
-            <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-green-500 to-green-600 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 transition-opacity duration-300 bg-green-600 opacity-0 group-hover:opacity-100"></div>
             <div className="relative flex flex-col items-center justify-center h-48 p-6">
               <div className="p-4 mb-4 transition-colors duration-300 bg-green-100 rounded-full group-hover:bg-white/20">
                 <Plus className="w-8 h-8 text-green-600 transition-colors duration-300 group-hover:text-white" />
@@ -52,10 +52,10 @@ export default function Dashboard() {
           </Link>
 
           <Link
-            to="/books"
+            to="/dashboard/books"
             className="relative overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-2xl"
           >
-            <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-purple-500 to-purple-600 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 transition-opacity duration-300 bg-purple-600 opacity-0 group-hover:opacity-100"></div>
             <div className="relative flex flex-col items-center justify-center h-48 p-6">
               <div className="p-4 mb-4 transition-colors duration-300 bg-purple-100 rounded-full group-hover:bg-white/20">
                 <BookOpen className="w-8 h-8 text-purple-600 transition-colors duration-300 group-hover:text-white" />

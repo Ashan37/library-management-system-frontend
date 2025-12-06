@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuthStore } from "../../store/authStore";
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 type RegisterFormData = {
   name: string;
@@ -10,6 +11,7 @@ type RegisterFormData = {
 
 export default function Register() {
   const registerUser = useAuthStore((s) => s.registerUser);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -23,6 +25,7 @@ export default function Register() {
       setIsLoading(true);
       setError(null);
       await registerUser(data);
+      navigate("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Registration failed");
     } finally {
@@ -31,10 +34,10 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="p-6 bg-white rounded shadow w-96"
+        className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg sm:p-8"
       >
         <h2 className="mb-4 text-xl font-semibold">Register</h2>
 
@@ -57,7 +60,7 @@ export default function Register() {
                 message: "Name must be at least 2 characters",
               },
             })}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             placeholder="Name"
           />
           {errors.name && (
@@ -78,7 +81,7 @@ export default function Register() {
                 message: "Invalid email address",
               },
             })}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             placeholder="Email"
           />
           {errors.email && (
@@ -100,7 +103,7 @@ export default function Register() {
               },
             })}
             type="password"
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             placeholder="Password"
           />
           {errors.password && (
@@ -113,7 +116,7 @@ export default function Register() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full py-2 mt-2 text-white bg-green-600 rounded disabled:bg-green-400 disabled:cursor-not-allowed"
+          className="w-full py-3 mt-4 text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors shadow hover:shadow-md disabled:bg-green-400 disabled:cursor-not-allowed"
         >
           {isLoading ? "Registering..." : "Register"}
         </button>

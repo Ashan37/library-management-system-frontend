@@ -25,7 +25,7 @@ export default function AddBook() {
     try {
       setIsSubmitting(true);
       await addBook(data);
-      navigate("/books");
+      navigate("/dashboard/books");
     } catch (error) {
       console.error("Failed to add book:", error);
     } finally {
@@ -34,28 +34,28 @@ export default function AddBook() {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
       <div className="max-w-3xl mx-auto">
-        <div className="p-6 mb-6 bg-white rounded-lg shadow">
-          <div className="flex items-center gap-4 mb-2">
+        <div className="p-4 mt-10 mb-4 bg-white rounded-lg shadow sm:p-6 sm:mb-6">
+          <div className="flex items-center gap-2 mb-2 sm:gap-4">
             <Link
-              to="/books"
-              className="p-2 transition-colors rounded-lg hover:bg-gray-100"
+              to="/dashboard/books"
+              className="flex-shrink-0 p-2 transition-colors rounded-lg hover:bg-gray-100"
             >
               <ArrowLeft className="w-5 h-5 text-gray-600" />
             </Link>
-            <h1 className="flex items-center gap-2 text-3xl font-bold text-gray-800">
-              <BookPlus className="w-8 h-8 text-green-600" />
+            <h1 className="flex items-center gap-2 text-xl font-bold text-gray-800 sm:text-2xl lg:text-3xl">
+              <BookPlus className="w-6 h-6 text-green-600 sm:w-8 sm:h-8" />
               Add New Book
             </h1>
           </div>
-          <p className="text-gray-600 ml-14">
+          <p className="ml-0 text-sm text-gray-600 sm:text-base sm:ml-14">
             Fill in the details to add a new book to your library
           </p>
         </div>
 
-        <div className="p-6 bg-white rounded-lg shadow">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="p-4 bg-white rounded-lg shadow sm:p-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
             <div>
               <label
                 htmlFor="title"
@@ -159,7 +159,7 @@ export default function AddBook() {
                 {isSubmitting ? "Adding..." : "Add Book"}
               </button>
               <Link
-                to="/books"
+                to="/dashboard/books"
                 className="flex-1 px-6 py-3 text-center text-gray-700 transition-colors bg-gray-200 rounded-lg hover:bg-gray-300"
               >
                 Cancel

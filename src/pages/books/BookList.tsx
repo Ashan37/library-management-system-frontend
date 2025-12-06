@@ -23,24 +23,24 @@ export default function BooksList() {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
       <div className="mx-auto max-w-7xl">
-        <div className="p-6 mb-6 bg-white rounded-lg shadow">
+        <div className="p-4 mt-10 mb-4 bg-white rounded-lg shadow sm:p-6 sm:mb-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="flex items-center gap-2 text-3xl font-bold text-gray-800">
-                <Book className="w-8 h-8 text-blue-600" />
+              <h1 className="flex items-center gap-2 text-2xl font-bold text-gray-800 sm:text-3xl">
+                <Book className="w-6 h-6 text-blue-600 sm:w-8 sm:h-8" />
                 Books Collection
               </h1>
-              <p className="mt-1 text-gray-600">
+              <p className="mt-1 text-sm text-gray-600 sm:text-base">
                 Manage your library books
               </p>
             </div>
             <Link
-              to="/books/add"
-              className="flex items-center gap-2 px-6 py-3 text-white transition-colors bg-green-600 rounded-lg shadow hover:bg-green-700 hover:shadow-md"
+              to="/dashboard/books/add"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-sm text-white transition-colors bg-green-600 rounded-lg shadow sm:px-6 sm:py-3 sm:text-base hover:bg-green-700 hover:shadow-md"
             >
-              <Plus className="w-5 h-5" />
+              <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
               Add New Book
             </Link>
           </div>
@@ -60,7 +60,7 @@ export default function BooksList() {
               Start by adding your first book to the library
             </p>
             <Link
-              to="/books/add"
+              to="/dashboard/books/add"
               className="inline-flex items-center gap-2 px-6 py-3 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
             >
               <Plus className="w-5 h-5" />
@@ -68,14 +68,14 @@ export default function BooksList() {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {books.map((book) => (
               <div
                 key={book.id}
                 className="transition-shadow duration-300 bg-white rounded-lg shadow hover:shadow-lg"
               >
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-gray-800 line-clamp-2">
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 text-lg font-bold text-gray-800 sm:text-xl line-clamp-2">
                     {book.title}
                   </h3>
                   <p className="mb-3 font-medium text-blue-600">
@@ -93,20 +93,22 @@ export default function BooksList() {
                   )}
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-200">
+                  <div className="flex gap-2 pt-4 border-t border-gray-200 sm:gap-3">
                     <Link
-                      to={`/books/edit/${book.id}`}
-                      className="flex items-center justify-center flex-1 gap-2 px-4 py-2 text-blue-600 transition-colors rounded-lg bg-blue-50 hover:bg-blue-100"
+                      to={`/dashboard/books/edit/${book.id}`}
+                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm text-blue-600 transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base bg-blue-50 hover:bg-blue-100"
                     >
-                      <Edit className="w-4 h-4" />
-                      Edit
+                      <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="hidden xs:inline">Edit</span>
+                      <span className="xs:hidden">Edit</span>
                     </Link>
                     <button
                       onClick={() => handleDelete(book.id)}
-                      className="flex items-center justify-center flex-1 gap-2 px-4 py-2 text-red-600 transition-colors rounded-lg bg-red-50 hover:bg-red-100"
+                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm text-red-600 transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base bg-red-50 hover:bg-red-100"
                     >
-                      <Trash2 className="w-4 h-4" />
-                      Delete
+                      <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="hidden xs:inline">Delete</span>
+                      <span className="xs:hidden">Delete</span>
                     </button>
                   </div>
                 </div>
