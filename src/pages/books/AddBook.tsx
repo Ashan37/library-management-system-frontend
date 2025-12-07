@@ -8,7 +8,6 @@ type BookFormData = {
   title: string;
   author: string;
   description: string;
-  isbn?: string;
 };
 
 export default function AddBook() {
@@ -34,18 +33,21 @@ export default function AddBook() {
   };
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-6" style={{ backgroundColor: '#F5F3EF' }}>
       <div className="max-w-3xl mx-auto">
         <div className="p-4 mt-10 mb-4 bg-white rounded-lg shadow sm:p-6 sm:mb-6">
           <div className="flex items-center gap-2 mb-2 sm:gap-4">
             <Link
               to="/dashboard/books"
-              className="flex-shrink-0 p-2 transition-colors rounded-lg hover:bg-gray-100"
+              className="flex-shrink-0 p-2 transition-colors rounded-lg"
+              style={{ color: '#5E2A2B' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5F3EF'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
             >
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <ArrowLeft className="w-5 h-5" style={{ color: '#5E2A2B' }} />
             </Link>
-            <h1 className="flex items-center gap-2 text-xl font-bold text-gray-800 sm:text-2xl lg:text-3xl">
-              <BookPlus className="w-6 h-6 text-green-600 sm:w-8 sm:h-8" />
+            <h1 className="flex items-center gap-2 text-xl font-bold sm:text-2xl lg:text-3xl" style={{ color: '#5E2A2B' }}>
+              <BookPlus className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#5E2A2B' }} />
               Add New Book
             </h1>
           </div>
@@ -73,7 +75,10 @@ export default function AddBook() {
                   },
                 })}
                 placeholder="Enter book title"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+                style={{ borderColor: '#C9A99A' }}
+                onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #5E2A2B'}
+                onBlur={(e) => e.target.style.boxShadow = 'none'}
               />
               {errors.title && (
                 <p className="mt-1 text-sm text-red-600">
@@ -99,28 +104,16 @@ export default function AddBook() {
                   },
                 })}
                 placeholder="Enter author name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+                style={{ borderColor: '#C9A99A' }}
+                onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #5E2A2B'}
+                onBlur={(e) => e.target.style.boxShadow = 'none'}
               />
               {errors.author && (
                 <p className="mt-1 text-sm text-red-600">
                   {errors.author.message}
                 </p>
               )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="isbn"
-                className="block mb-2 text-sm font-medium text-gray-700"
-              >
-                ISBN (Optional)
-              </label>
-              <input
-                id="isbn"
-                {...register("isbn")}
-                placeholder="Enter ISBN number"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
             </div>
 
             <div>
@@ -141,7 +134,10 @@ export default function AddBook() {
                 })}
                 placeholder="Enter book description"
                 rows={5}
-                className="w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:border-transparent"
+                style={{ borderColor: '#C9A99A' }}
+                onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #5E2A2B'}
+                onBlur={(e) => e.target.style.boxShadow = 'none'}
               />
               {errors.description && (
                 <p className="mt-1 text-sm text-red-600">
@@ -154,13 +150,19 @@ export default function AddBook() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 px-6 py-3 text-white transition-colors bg-green-600 rounded-lg shadow hover:bg-green-700 hover:shadow-md disabled:bg-green-400 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-3 text-white transition-all rounded-lg shadow hover:shadow-md disabled:cursor-not-allowed"
+                style={{ backgroundColor: isSubmitting ? '#C9A99A' : '#5E2A2B' }}
+                onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#4A1F20')}
+                onMouseLeave={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#5E2A2B')}
               >
                 {isSubmitting ? "Adding..." : "Add Book"}
               </button>
               <Link
                 to="/dashboard/books"
-                className="flex-1 px-6 py-3 text-center text-gray-700 transition-colors bg-gray-200 rounded-lg hover:bg-gray-300"
+                className="flex-1 px-6 py-3 text-center transition-all bg-white border-2 rounded-lg shadow"
+                style={{ color: '#5E2A2B', borderColor: '#C9A99A' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5F3EF'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffffff'}
               >
                 Cancel
               </Link>

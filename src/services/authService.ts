@@ -1,6 +1,17 @@
-import {api} from "./api";
+import { api } from "./api";
 
-export const AuthService={
-    login:(data:any)=>api.post("/auth/login",data),
-    register:(data:any)=>api.post("/auth/register",data),
+type LoginData = {
+  email: string;
+  password: string;
+};
+
+type RegisterData = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+export const AuthService = {
+  login: (data: LoginData) => api.post("/api/Auth/login", data),
+  register: (data: RegisterData) => api.post("/api/Auth/register", data),
 };

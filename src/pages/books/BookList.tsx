@@ -16,20 +16,20 @@ export default function BooksList() {
     loadBooks();
   }, [fetchBooks]);
 
-  const handleDelete = async (id: string | number) => {
+  const handleDelete = async (id: number) => {
     if (window.confirm("Are you sure you want to delete this book?")) {
       await deleteBook(id);
     }
   };
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-6" style={{ backgroundColor: '#F5F3EF' }}>
       <div className="mx-auto max-w-7xl">
         <div className="p-4 mt-10 mb-4 bg-white rounded-lg shadow sm:p-6 sm:mb-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="flex items-center gap-2 text-2xl font-bold text-gray-800 sm:text-3xl">
-                <Book className="w-6 h-6 text-blue-600 sm:w-8 sm:h-8" />
+              <h1 className="flex items-center gap-2 text-2xl font-bold sm:text-3xl" style={{ color: '#5E2A2B' }}>
+                <Book className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#5E2A2B' }} />
                 Books Collection
               </h1>
               <p className="mt-1 text-sm text-gray-600 sm:text-base">
@@ -38,7 +38,10 @@ export default function BooksList() {
             </div>
             <Link
               to="/dashboard/books/add"
-              className="flex items-center justify-center gap-2 px-4 py-2 text-sm text-white transition-colors bg-green-600 rounded-lg shadow sm:px-6 sm:py-3 sm:text-base hover:bg-green-700 hover:shadow-md"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-sm text-white transition-colors rounded-lg shadow sm:px-6 sm:py-3 sm:text-base hover:shadow-md"
+              style={{ backgroundColor: '#5E2A2B' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A1F20'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5E2A2B'}
             >
               <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
               Add New Book
@@ -48,7 +51,7 @@ export default function BooksList() {
 
         {isLoading ? (
           <div className="flex items-center justify-center h-64">
-            <div className="w-12 h-12 border-b-2 border-blue-600 rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-b-2 rounded-full animate-spin" style={{ borderColor: '#5E2A2B' }}></div>
           </div>
         ) : books.length === 0 ? (
           <div className="p-12 text-center bg-white rounded-lg shadow">
@@ -86,17 +89,14 @@ export default function BooksList() {
                     {book.description || "No description available"}
                   </p>
 
-                  {book.isbn && (
-                    <p className="mb-4 text-xs text-gray-500">
-                      ISBN: {book.isbn}
-                    </p>
-                  )}
-
                   {/* Action Buttons */}
-                  <div className="flex gap-2 pt-4 border-t border-gray-200 sm:gap-3">
+                  <div className="flex gap-2 pt-4 border-t sm:gap-3" style={{ borderColor: '#C9A99A' }}>
                     <Link
                       to={`/dashboard/books/edit/${book.id}`}
-                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm text-blue-600 transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base bg-blue-50 hover:bg-blue-100"
+                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base"
+                      style={{ backgroundColor: '#F5F3EF', color: '#5E2A2B' }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C9A99A'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F5F3EF'}
                     >
                       <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span className="hidden xs:inline">Edit</span>
@@ -104,7 +104,10 @@ export default function BooksList() {
                     </Link>
                     <button
                       onClick={() => handleDelete(book.id)}
-                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm text-red-600 transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base bg-red-50 hover:bg-red-100"
+                      className="flex items-center justify-center flex-1 gap-1 px-3 py-2 text-sm text-white transition-colors rounded-lg sm:gap-2 sm:px-4 sm:text-base"
+                      style={{ backgroundColor: '#5E2A2B' }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A1F20'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5E2A2B'}
                     >
                       <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span className="hidden xs:inline">Delete</span>

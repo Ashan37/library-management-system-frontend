@@ -8,7 +8,6 @@ type BookFormData = {
   title: string;
   author: string;
   description: string;
-  isbn?: string;
 };
 
 export default function EditBook() {
@@ -47,7 +46,7 @@ export default function EditBook() {
 
   if (!book) {
     return (
-      <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
+      <div className="min-h-screen p-4 sm:p-6" style={{ backgroundColor: '#F5F3EF' }}>
         <div className="max-w-3xl mx-auto">
           <div className="p-6 mt-10 text-center bg-white rounded-lg shadow sm:p-12">
             <BookOpen className="w-16 h-16 mx-auto mb-4 text-gray-300" />
@@ -71,7 +70,7 @@ export default function EditBook() {
   }
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-6" style={{ backgroundColor: '#F5F3EF' }}>
       <div className="max-w-3xl mx-auto">
         <div className="p-4 mb-4 bg-white rounded-lg shadow sm:p-6 sm:mb-6">
           <div className="flex items-center gap-2 mb-2 sm:gap-4">
@@ -141,21 +140,6 @@ export default function EditBook() {
                   {errors.author.message}
                 </p>
               )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="isbn"
-                className="block mb-2 text-sm font-medium text-gray-700"
-              >
-                ISBN (Optional)
-              </label>
-              <input
-                id="isbn"
-                {...register("isbn")}
-                placeholder="Enter ISBN number"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
             </div>
 
             <div>
