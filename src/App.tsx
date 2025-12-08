@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function App() {
   const initializeAuth = useAuthStore((state) => state.initializeAuth);
-
+//initialize auth on app load
   useEffect(() => {
     initializeAuth();
   }, [initializeAuth]);

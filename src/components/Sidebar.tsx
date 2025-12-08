@@ -23,7 +23,6 @@ export default function Sidebar() {
 
   return (
     <>
-     
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed z-50 p-2 bg-white rounded-lg shadow-lg top-4 left-4 lg:hidden"
@@ -61,13 +60,21 @@ export default function Sidebar() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 transition-colors rounded-lg"
                   style={{
-                    backgroundColor: isActive(item.path) ? '#5E2A2B' : 'transparent',
-                    color: isActive(item.path) ? 'white' : '#5E2A2B'
+                    backgroundColor: isActive(item.path)
+                      ? "#5E2A2B"
+                      : "transparent",
+                    color: isActive(item.path) ? "white" : "#5E2A2B",
                   }}
-                  onMouseEnter={(e) => !isActive(item.path) && (e.currentTarget.style.backgroundColor = '#F5F3EF')}
-                  onMouseLeave={(e) => !isActive(item.path) && (e.currentTarget.style.backgroundColor = 'transparent')}
+                  onMouseEnter={(e) =>
+                    !isActive(item.path) &&
+                    (e.currentTarget.style.backgroundColor = "#F5F3EF")
+                  }
+                  onMouseLeave={(e) =>
+                    !isActive(item.path) &&
+                    (e.currentTarget.style.backgroundColor = "transparent")
+                  }
                 >
                   <Icon className="w-5 h-5" />
                   <span className="font-medium">{item.label}</span>
