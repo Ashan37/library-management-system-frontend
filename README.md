@@ -312,9 +312,9 @@ if (error.response?.status === 401) {
 
 | Color | Hex Code | Preview | Usage |
 |:-----:|:--------:|:-------:|:------|
-| 🤍 **Cream** | `#F5F3EF` | ![#F5F3EF](https://via.placeholder.com/100x30/F5F3EF/F5F3EF.png) | Background |
-| 🍷 **Burgundy** | `#5E2A2B` | ![#5E2A2B](https://via.placeholder.com/100x30/5E2A2B/5E2A2B.png) | Primary buttons, headings |
-| 🤎 **Taupe** | `#C9A99A` | ![#C9A99A](https://via.placeholder.com/100x30/C9A99A/C9A99A.png) | Borders, accents |
+| 🤍 **Cream** | `#F5F3EF` | ![#F5F3EF]| Background |
+| 🍷 **Burgundy** | `#5E2A2B` | ![#5E2A2B]| Primary buttons, headings |
+| 🤎 **Taupe** | `#C9A99A` | ![#C9A99A]| Borders, accents |
 
 </div>
 
@@ -357,18 +357,7 @@ npm run build
 
 > 📂 Output folder: `dist/`
 
-### ☁️ Deployment Platforms
 
-<div align="center">
-
-| Platform | Command | Icon |
-|:--------:|:--------|:----:|
-| **Vercel** | `vercel` | ▲ |
-| **Netlify** | `netlify deploy --prod` | 🌐 |
-| **GitHub Pages** | Push to `gh-pages` branch | 🐙 |
-| **AWS S3** | Upload dist folder | ☁️ |
-
-</div>
 
 ## 🐛 Troubleshooting
 
@@ -406,11 +395,11 @@ npm run build
 ### 🔀 How to Contribute
 
 ```
-1️⃣  Fork the repository
-2️⃣  Create a feature branch (git checkout -b feature/AmazingFeature)
-3️⃣  Commit your changes (git commit -m 'Add some AmazingFeature')
-4️⃣  Push to the branch (git push origin feature/AmazingFeature)
-5️⃣  Open a Pull Request
+1️⃣  Create a feature branch (git checkout -b feature/AmazingFeature)
+2️⃣  Commit your changes (git commit -m 'Add some AmazingFeature')
+3️⃣  Push to the branch (git push origin feature/AmazingFeature)
+4️⃣  Open a Pull Request
+ 
 ```
 
 > We welcome all contributions! 💙
@@ -433,7 +422,7 @@ This project is licensed under the **MIT License**
 
 **Your Name** 
 
-[@YourGitHub](https://github.com/yourusername) · 📧 [Email](mailto:your.email@example.com)
+[@YourGitHub](https://github.com/Ashan37) · 📧 [Email](mailto:ashanekanayakeat@gmail.com)
 
 </div>
 
@@ -445,9 +434,7 @@ This project is licensed under the **MIT License**
 
 💬 **Need Help?**
 
-📧 Email: [support@example.com](mailto:support@example.com)
-
-🐛 [Open an Issue](https://github.com/yourusername/library-management-system-frontend/issues)
+📧 Email: [ashanekanayakeat@gmail.com]
 
 ⭐ Star this repository if you find it helpful!
 
@@ -455,30 +442,6 @@ This project is licensed under the **MIT License**
 
 ---
 
-## 🔮 Future Enhancements
-
-<table>
-<tr>
-<td>
-
-- [ ] 🔍 Search and filter functionality
-- [ ] 📂 Book categories/genres
-- [ ] 👥 User roles (Admin/User)
-- [ ] 🖼️ Book cover image upload
-- [ ] 📊 Export data (CSV/PDF)
-
-</td>
-<td>
-
-- [ ] 🌙 Dark mode toggle
-- [ ] 📄 Pagination for large datasets
-- [ ] 🧪 Unit & E2E testing
-- [ ] 📱 PWA support
-- [ ] 🔔 Real-time notifications
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -492,10 +455,9 @@ Built with **React** ⚛️ · **TypeScript** 📘 · **Tailwind CSS** 🎨
 
 ---
 
-**© 2024 Library Management System. All rights reserved.**
+**© 2025 Library Management System. All rights reserved.**
 
 </div>
 
 ---
 
-If you’d like, I can also provide this as a downloadable `README.md` file.
