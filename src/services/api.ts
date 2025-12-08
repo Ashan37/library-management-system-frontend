@@ -1,11 +1,9 @@
 import axios from "axios";
 
-//axios with base url
 export const api = axios.create({
-  baseURL: "http://localhost:5119",
+  baseURL: "http://localhost:5119", // Match backend port
 });
 
-//add a request interceptor to token header
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -14,10 +12,9 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {

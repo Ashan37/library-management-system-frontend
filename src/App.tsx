@@ -5,19 +5,14 @@ import { useEffect } from "react";
 
 export default function App() {
   const initializeAuth = useAuthStore((state) => state.initializeAuth);
-//initialize auth on app load
   useEffect(() => {
     initializeAuth();
   }, [initializeAuth]);
 
   return <RouterProvider router={router} />;
 }
-import { RouterProvider } from 'react-router-dom'
-import { router } from './routes/router'
 
 
-export default function App() {
-  return <RouterProvider router={router} />
-}
+
 
 
