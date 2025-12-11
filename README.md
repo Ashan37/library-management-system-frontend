@@ -7,10 +7,10 @@
   <i>A modern, responsive web application for managing library books with full CRUD operations</i>
 </p>
 
-![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.6.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5.4.10-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-3.4.14-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4.18-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 </div>
 
@@ -88,20 +88,20 @@
 
 | Technology | Version | Purpose |
 |:----------:|:-------:|:-------:|
-| ⚛️ React | 18.3.1 | UI Library |
-| 📘 TypeScript | 5.6.2 | Type Safety |
-| ⚡ Vite | 5.4.10 | Build Tool |
-| 🎨 Tailwind CSS | 3.4.14 | Styling |
+| ⚛️ React | 19.2.0 | UI Library |
+| 📘 TypeScript | 5.9.3 | Type Safety |
+| ⚡ Vite | 7.2.4 | Build Tool |
+| 🎨 Tailwind CSS | 3.4.18 | Styling |
 
 ### Key Dependencies
 
 | Package | Version | Purpose |
 |:-------:|:-------:|:-------:|
-| 🧭 React Router DOM | 6.28.0 | Routing |
-| 🐻 Zustand | 5.0.2 | State Management |
-| 📝 React Hook Form | 7.53.2 | Form Handling |
-| 🌐 Axios | 1.7.8 | HTTP Client |
-| 🎭 Lucide React | 0.460.0 | Icons |
+| 🧭 React Router DOM | 7.10.1 | Routing |
+| 🐻 Zustand | 5.0.9 | State Management |
+| 📝 React Hook Form | 7.68.0 | Form Handling |
+| 🌐 Axios | 1.13.2 | HTTP Client |
+| 🎭 Lucide React | 0.556.0 | Icons |
 
 </div>
 
