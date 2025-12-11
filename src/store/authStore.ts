@@ -30,10 +30,20 @@ export const useAuthStore = create<AuthState>((set) => ({
   initializeAuth: () => {
     const token = localStorage.getItem("token");
     const userStr = localStorage.getItem("user");
-    const user = userStr ? JSON.parse(userStr) : null;
+    let user =null;
 
-    if (token && user) {
-      set({ token, user, isAuthenticated: true });
+    if(userStr && userStr!=="undefined" && userStr!=="null"){
+      try{
+        user=JSON.parse(userStr);
+      }catch(error){
+        console.error("Failed to parse user from localstorage:",error);
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+      }
+    }
+
+    if(token&&user){
+      set({token, user,isAuthenticated:true});
     }
   },
 

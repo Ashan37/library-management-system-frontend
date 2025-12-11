@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations for auth pages */
 @keyframes fade-in {
   from {
     opacity: 0;
